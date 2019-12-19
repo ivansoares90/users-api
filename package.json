@@ -1,0 +1,32 @@
+{
+  "name": "users-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "predev": "sequelize db:migrate",
+    "dev": "nodemon src/server.js --ignore __tests__",
+    "pretest": "cross-env NODE_ENV=test sequelize db:migrate",
+    "test": "cross-env NODE_ENV=test jest",
+    "posttest": "cross-env NODE_ENV=test sequelize db:migrate:undo:all"
+  },
+  "author": "Ivan Soares",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
+    "pg": "^7.15.0",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "jest-cli": "^24.9.0",
+    "nodemon": "^2.0.2",
+    "sequelize-cli": "^5.5.1",
+    "sqlite3": "^4.1.1",
+    "supertest": "^4.0.2"
+  }
+}
